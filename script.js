@@ -4,11 +4,7 @@ var ul = document.querySelector("ul");
 
 var shoppingList = [];
 
-function inputLength() {
-	return input.value.length;
-}
-
-function createListElement() {
+function createListElement(item) {
 	var li = document.createElement("li");
 	var newButton = document.createElement("BUTTON");
 	newButton.className = "listItem";
@@ -16,17 +12,22 @@ function createListElement() {
 	li.appendChild(newButton);
 	ul.appendChild(li);
 	input.value = "";
+	shoppingList.push(item);
 }
 
 function addListAfterClick() {
-	if (inputLength() > 0) {
+	if (input.value.length > 0) {
 		createListElement();
 	}
 }
 
 function addListAfterKeypress(event) {
-	if (inputLength() > 0 && event.keyCode === 13) {
-		createListElement();
+	if (input.value.length > 0 && event.keyCode === 13) {
+		var shoppingItem = {
+	    name: input.value,
+	    onStatus: false 
+    }
+		createListElement(shoppingItem);
 	}
 }
 
