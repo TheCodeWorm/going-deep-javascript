@@ -4,44 +4,34 @@ var ul = document.querySelector("ul");
 
 var shoppingList = [];
 
-function displayList() {
-	console.log("start");
-	for (var i=0; i<shoppingList.length; i++) {
-		console.log(i);
-	}
-	console.log("end");
+function removeFromListElement() {
+	this.parentNode.parentNode.removeChild(this.parentNode);
 }
 
-function removeListElement() {
-	console.log("testing");
-}
-
-function createListElement(item) {
-	var li = document.createElement("li");
+function addToListElement() {
 	var newButton = document.createElement("BUTTON");
-	newButton.className = "listItem";
 	newButton.appendChild(document.createTextNode(input.value));
-	newButton.addEventListener("click", removeListElement);
-	li.appendChild(newButton);
-	ul.appendChild(li);
+	newButton.addEventListener("click", removeFromListElement);
+	newButton.className = "listItem";
+	ul.appendChild(document.createElement("li")).appendChild(newButton);
 	input.value = "";
 }
 
 function addListAfterClick() {
 	if (input.value.length > 0) {
-		createListElement();
+		addToListElement();
 	}
 }
 
 function addListAfterKeypress(event) {
 	if (input.value.length > 0 && event.keyCode === 13) {
 		var shoppingItem = {
+			id: shoppingList.length,
 	    name: input.value,
 	    onStatus: false 
     }
     shoppingList.push(shoppingItem);
-    displayList();
-		createListElement(shoppingItem);
+		addToListElement(shoppingItem);
 	}
 }
 
