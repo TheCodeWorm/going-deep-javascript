@@ -3,8 +3,13 @@ var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
 
 var shoppingList = [];
-function updateListElements() {
-	;
+
+function displayList() {
+	console.log("start");
+	for (var i=0; i<shoppingList.length; i++) {
+		console.log(i);
+	}
+	console.log("end");
 }
 
 function removeListElement() {
@@ -20,7 +25,6 @@ function createListElement(item) {
 	li.appendChild(newButton);
 	ul.appendChild(li);
 	input.value = "";
-	shoppingList.push(item);
 }
 
 function addListAfterClick() {
@@ -35,6 +39,8 @@ function addListAfterKeypress(event) {
 	    name: input.value,
 	    onStatus: false 
     }
+    shoppingList.push(shoppingItem);
+    displayList();
 		createListElement(shoppingItem);
 	}
 }
