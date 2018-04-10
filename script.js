@@ -3,12 +3,20 @@ var input = document.getElementById("userinput");
 var ul = document.querySelector("ul");
 
 var shoppingList = [];
+function updateListElements() {
+	;
+}
+
+function removeListElement() {
+	console.log("testing");
+}
 
 function createListElement(item) {
 	var li = document.createElement("li");
 	var newButton = document.createElement("BUTTON");
 	newButton.className = "listItem";
 	newButton.appendChild(document.createTextNode(input.value));
+	newButton.addEventListener("click", removeListElement);
 	li.appendChild(newButton);
 	ul.appendChild(li);
 	input.value = "";
