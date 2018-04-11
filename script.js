@@ -69,3 +69,17 @@ document.getElementById("clearAll").addEventListener("click", clearList);
 document.getElementById("enter").addEventListener("click", addListAfterClick);
 document.getElementById("clear").addEventListener("click", clearStrikes);
 input.addEventListener("keypress", addListAfterKeypress);
+
+/*
+var handlers = {
+	addListAfterClick = () => {
+		addListAfterClick();
+	},
+	clearStrikes = () => {
+		clearStrikes();
+	}, 
+	clearList = () => {
+		clearList();
+	}
+};
+*/
