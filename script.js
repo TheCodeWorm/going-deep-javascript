@@ -25,11 +25,31 @@ function clearList() {
 }
 
 function addToListElement() {
+	/*
+	// this piece of code appends to end of list
 	var newButton = document.createElement("BUTTON");
 	newButton.appendChild(document.createTextNode(input.value));
 	newButton.addEventListener("click", toggleDone);
 	newButton.className = "listItem";
+	//ul.appendChild(document.createElement("li")).appendChild(newButton);
 	ul.appendChild(document.createElement("li")).appendChild(newButton);
+	*/
+	/*
+	var newItem = document.createElement("Li");
+  var textnode = document.createTextNode(input.value);
+  newItem.appendChild(textnode);
+  */
+
+  // this piece of code inserts element at beginnning
+  var newItem = document.createElement("Li");
+  var newButton = document.createElement("BUTTON");
+  newButton.appendChild(document.createTextNode(input.value));
+	newButton.addEventListener("click", toggleDone);
+	newButton.className = "listItem";
+  newItem.appendChild(newButton);
+  
+  var list = document.getElementById("itemsList");
+  list.insertBefore(newItem, list.childNodes[0]);
 	input.value = "";
 }
 
