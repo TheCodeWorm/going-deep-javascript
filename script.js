@@ -1,6 +1,7 @@
 // For testing....
 
-var arr = ['Leslie', 'Carrie', 'Donna']
+
+var arr = ['Leslie', 'Carrie', 'Donna'];
 
 var str = "";
 arr.forEach( function (e) { str += (e+' ') });
