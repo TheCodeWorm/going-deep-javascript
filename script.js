@@ -1,16 +1,10 @@
 // For testing....
 
+var arr = ['Leslie', 'Carrie', 'Donna']
 
-var nameArray = ['Leslie', 'Carrie', 'Donna']
-//arr1.forEach( function (e) { str += (e+' ') });
-function myFunction(arr) {
-	var str = "";
-	for (var i=0; i<arr.length; i++) {
-		str += ( arr[i] + ' ' );
-	}
-	return str;
-};
-var str = myFunction(nameArray);
+var str = "";
+arr.forEach( function (e) { str += (e+' ') });
+
 console.log(str);
 var h = document.createElement("H1");
 var t = document.createTextNode(str);
