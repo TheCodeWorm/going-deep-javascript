@@ -1,7 +1,7 @@
 # Javascript Playground
 
-For me only.
+For me only and completely random.
 
-This repo is where I play with javascript. The code in this repo changes. For example. This week I may be playing with higher-order functions. And, next week I may be playing with closures, or some other random javascript code. 
+This repo is where I play with javascript for any given component that I may be working on in a project somewhere.
 
 :)
